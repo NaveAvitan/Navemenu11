@@ -12,11 +12,18 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout lv;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);
 
         return true;
+    }
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        lv= findViewById(R.id.lv);
     }
     public boolean onOptionsItemSelected (MenuItem menu){
         int id= menu.getItemId();
@@ -31,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return  true;
     }
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        LinearLayout lv= (LinearLayout) findViewById(R.id.lv);
-    }
-
     public void nextact(View view) {
         Intent si=new Intent(this,Main2Activity.class);
         startActivity(si);
